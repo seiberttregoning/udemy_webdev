@@ -1,0 +1,104 @@
+ /* * {
+    background-color: cyan;
+}
+Everything selector */
+
+body {
+    background-color: #f1faee;
+}
+
+button {
+    font-size: 30px;
+    background-color: #a8dadc;
+}
+
+/* Select multiple all (uses comma) */
+h1, h2 {
+    color: #1d3557;
+}
+
+/* id selector (uses octothorp)*/
+#signup {
+    background-color: #1d3557;
+    color: #f1faee;
+}
+
+
+span {
+    color: #457b9d;
+}
+
+/* Class selector (uses period)*/
+.tag {
+    background-color: #e63946;
+    color: #f1faee;
+    font-size: 16px;
+}
+
+.post a {
+    color: #457b9d;
+    font-weight: 700;
+    text-decoration: none;
+}
+
+/* Descendant selector (uses space) */
+footer a {
+    color: #e63946;
+}
+
+/* Adjacent combinator, affect buttons that are preceeded (same level) by h2 (uses plus) */
+h2 + button {
+    font-size: 20px;
+}
+
+/* Direct child (one level down only!) combinator (uses >) */
+footer > a {
+    color: #457b9d
+}
+
+/* Attribute selector (uses brackets) */
+input[type="password"] {
+    color: greenyellow;
+}
+
+/* Fuzzy matching with asterix
+a[href*="google"] {
+    color: magenta;
+} */
+
+
+/* Pseduoclass (uses colon), refers to temporary states (like hovering) */
+.post button:hover {
+    background-color: #e63946;
+    color: #f1faee;
+}
+
+.post a:hover {
+    text-decoration: underline;
+}
+
+.post button:active {
+    background-color: #02c39a;
+}
+
+.post:nth-of-type(2n) {
+    background-color: #dfe8dc;
+}
+
+/* Pseudoelement (uses 2 colons) refers to parts of an element */
+h2::first-letter {
+    font-size: 50px;
+}
+
+p::first-line {
+    color: purple;
+}
+
+p::selection {
+    background-color: #fcbf49;
+}
+
+button:hover {
+    background-color: olive;
+    font-size: 10px;
+}

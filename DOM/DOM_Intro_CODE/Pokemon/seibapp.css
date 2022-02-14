@@ -1,0 +1,9 @@
+.pokemon {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+}
+
+.pokemon img {
+    display: block;
+}
