@@ -9,7 +9,7 @@ const app = express();
 
 app.get('/', (req, res) => {
     console.log('ROOT REQUEST!');
-    res.send('This is the home page!');
+    res.send('Welcome to the home page!');
 })
 
 
