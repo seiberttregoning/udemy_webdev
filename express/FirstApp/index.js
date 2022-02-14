@@ -25,6 +25,15 @@ app.get('/r/:subreddit/:postId', (req, res) => {
     res.send(`<h1>Viewing Post ID: ${postId} on ${subreddit} subreddit</h1>`);
 })
 
+// getting query strings
+app.get('/search', (req, res) => {
+    const { q } = req.query;
+    if (!q) {
+        res.send('Nothing found if nothing searched!')
+    }
+    res.send(`<h1>Search results for: ${q}</h1>`);
+})
+
 app.get('/cats', (req, res) => {
     console.log('CAT REQUEST!');
     res.send('meow!');
