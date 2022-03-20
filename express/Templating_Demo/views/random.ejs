@@ -13,7 +13,11 @@
     <h2> <%= num %> </h2>
     <% if(num % 2 === 0) {%>
     <p>That is an even number!</p>
+    <% } else {%>
+    <p>That is an odd number!</p>
     <% } %>
+    <!-- Another way: -->
+    <p><%= num%2===0 ? 'Even!' : 'Odd!' %></p>
 </body>
 
 </html>
