@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const path = require('path'); // Needed to update ejs views directory lookup
+const redditData = require('./data.json');
+
+app.use(express.static(path.join(__dirname, '/public')));
 
 app.set('view engine', 'ejs');
 
@@ -14,7 +17,7 @@ app.get('/', (req, res) => {
 
 app.get('/cats', (req, res) => {
     const cats = [
-        'Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston'
+        'Blue', 'Rocket', 'Monty', 'Stephanie', 'Winston', 'Ellie'
     ];
     res.render('cats', { cats });
 });
@@ -29,8 +32,13 @@ app.get('/random', (req, res) => {
 
 app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
-    res.render('subreddit', { subreddit })
-})
+    const data = redditData[subreddit];
+    if (data) {
+        res.render('subreddit', { ...data }) // Spreads the object, saves me from referencing data.name data.etc
+    } else {
+        res.render('notfound', { subreddit })
+    };
+});
 
 
 app.listen(3000, () => {
