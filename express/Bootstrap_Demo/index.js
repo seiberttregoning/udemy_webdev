@@ -34,9 +34,9 @@ app.get('/r/:subreddit', (req, res) => {
     const { subreddit } = req.params;
     const data = redditData[subreddit];
     if (data) {
-        res.render('subreddit', { ...data, title: subreddit.toUpperCase() }) // Spreads the object, saves me from referencing data.name data.etc
+        res.render('subreddit', { ...data, title: data.name }) // Spreads the object, saves me from referencing data.name data.etc
     } else {
-        res.render('notfound', { subreddit, title: subreddit.toUpperCase() })
+        res.render('notfound', { subreddit, title: 'Subreddit not found' })
     };
 });
 
